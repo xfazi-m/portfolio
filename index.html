@@ -205,10 +205,73 @@
                         </a>
                     </div>
                 </div>
-                
-                <div class="relative lg:h-[650px] w-full reveal delay-200 group">
-                    <div class="absolute inset-0 bg-black rounded-3xl transform rotate-3 opacity-5 group-hover:rotate-6 transition-transform duration-700"></div>
-                    <img src="images/_C__Users_U%C5%BCytkownik_Downloads_index.html.png" 
+                  <style>
+        body {
+            background-color: #f8fafc; /* Jasne, neutralne tło */
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Kontener dla elementu */
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Pełna wysokość ekranu */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Przesunięcie do prawej */
+            padding-right: 10%; /* Odstęp od krawędzi */
+        }
+
+        /* Zaokrąglony kwadrat z obrazem */
+        .image-frame {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            background-color: #e2e8f0;
+            border-radius: 60px; /* Duże zaokrąglenie */
+            transform: rotate(-5deg); /* Lekkie obrócenie dla efektu "położenia" */
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .image-frame:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(5deg); /* Kontra dla obrotu ramki, aby obraz był prosty */
+            scale: 1.2; /* Powiększenie, żeby wypełnić rogi przy rotacji */
+        }
+
+        /* Responsywność dla urządzeń mobilnych */
+        @media (max-width: 768px) {
+            .banner-container {
+                justify-content: center;
+                padding-right: 0;
+            }
+            .image-frame {
+                width: 300px;
+                height: 300px;
+                border-radius: 40px;
+            }
+        }
+    </style>
+
+    <div class="banner-container">
+        <!-- Ramka na zdjęcie -->
+        <div class="image-frame">
+            <!-- Tutaj wstawiasz swój obraz -->
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Twoje zdjęcie"
+                 onerror="this.src='https://via.placeholder.com/600x600?text=Twoje+Zdjecie'">
+        </div>
+    </div>
+ 
             </div>
         </div>
     </section>
