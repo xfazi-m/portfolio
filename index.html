@@ -205,75 +205,72 @@
                         </a>
                     </div>
                 </div>
-                  <style>
-        body {
-            background-color: #f8fafc; /* Jasne, neutralne tło */
-            margin: 0;
-            overflow-x: hidden;
-        }
+<style>
+    /* Kontener dla elementu - usunięto height: 100vh, aby uniknąć przerw */
+    .banner-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Przesunięcie do prawej */
+        padding: 40px 10%; /* Odstęp góra/dół i od krawędzi bocznej */
+        box-sizing: border-box;
+    }
 
-        /* Kontener dla elementu */
+    /* Zaokrąglony kwadrat z obrazem */
+    .image-frame {
+        position: relative;
+        width: 450px;
+        height: 450px;
+        background-color: #e2e8f0;
+        border-radius: 60px; /* Duże zaokrąglenie */
+        transform: rotate(-5deg); /* Przechylenie ramki */
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .image-frame:hover {
+        transform: rotate(0deg) scale(1.02);
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Kontra dla obrotu ramki (-5deg), aby obraz był idealnie prosto (5deg) */
+        /* Zwiększono scale, aby przy obrocie nie było widać białych rogów */
+        transform: rotate(5deg) scale(1.3); 
+        transition: transform 0.3s ease;
+    }
+
+    .image-frame:hover img {
+        transform: rotate(0deg) scale(1);
+    }
+
+    /* Responsywność dla urządzeń mobilnych */
+    @media (max-width: 768px) {
         .banner-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Pełna wysokość ekranu */
-            display: flex;
-            align-items: center;
-            justify-content: flex-end; /* Przesunięcie do prawej */
-            padding-right: 10%; /* Odstęp od krawędzi */
+            justify-content: center;
+            padding: 20px 5%;
         }
-
-        /* Zaokrąglony kwadrat z obrazem */
         .image-frame {
-            position: relative;
-            width: 450px;
-            height: 450px;
-            background-color: #e2e8f0;
-            border-radius: 60px; /* Duże zaokrąglenie */
-            transform: rotate(-5deg); /* Lekkie obrócenie dla efektu "położenia" */
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
+            width: 300px;
+            height: 300px;
+            border-radius: 40px;
         }
+    }
+</style>
 
-        .image-frame:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-
-        .image-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: rotate(5deg); /* Kontra dla obrotu ramki, aby obraz był prosty */
-            scale: 1.2; /* Powiększenie, żeby wypełnić rogi przy rotacji */
-        }
-
-        /* Responsywność dla urządzeń mobilnych */
-        @media (max-width: 768px) {
-            .banner-container {
-                justify-content: center;
-                padding-right: 0;
-            }
-            .image-frame {
-                width: 300px;
-                height: 300px;
-                border-radius: 40px;
-            }
-        }
-    </style>
-
-    <div class="banner-container">
-        <!-- Ramka na zdjęcie -->
-        <div class="image-frame">
-            <!-- Tutaj wstawiasz swój obraz -->
-            <img src="images/424.png" 
-                 alt="Twoje zdjęcie"
-                 onerror="this.src='https://via.placeholder.com/600x600?text=Twoje+Zdjecie'">
-        </div>
+<div class="banner-container">
+    <!-- Ramka na zdjęcie -->
+    <div class="image-frame">
+        <!-- Obrazek jest teraz wyprostowany względem przechylonej ramki -->
+        <img src="images/424.png" 
+             alt="Twoje zdjęcie"
+             onerror="this.src='https://via.placeholder.com/600x600?text=Twoje+Zdjecie'">
     </div>
-            </div>
-        </div>
-
+</div>
     <!-- O MNIE SECTION -->
     <section id="about" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
