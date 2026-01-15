@@ -52,18 +52,18 @@
     </script>
 
     <style>
-        /* Globalne style */
+ 
         body {
             background-color: #ffffff;
             color: #0a0a0a;
-            overflow-x: hidden; /* Zapobiega poziomemu scrollowaniu przy animacjach */
+            overflow-x: hidden; 
         }
 
-        /* Ulepszona animacja Reveal */
+
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); /* Bardziej sprężysta animacja */
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); 
         }
 
         .reveal.active {
@@ -71,7 +71,7 @@
             transform: translateY(0);
         }
 
-        /* Scrollbar Premium */
+        
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -87,7 +87,7 @@
             background: #000;
         }
 
-        /* Placeholder obrazków */
+    
         img {
             background-color: #f0f0f0;
             position: relative;
@@ -111,14 +111,13 @@
             font-weight: 500;
         }
 
-        /* Glassmorphism dla kart */
+     
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        /* Efekt poświaty dla Discorda */
         .discord-glow {
             box-shadow: 0 0 40px -10px rgba(88, 101, 242, 0.4);
             transition: box-shadow 0.3s ease;
@@ -127,7 +126,6 @@
             box-shadow: 0 0 60px -10px rgba(88, 101, 242, 0.6);
         }
         
-        /* Obsługa formularza Kwestorms/KwesForms */
         .kw-alert { 
             margin-top: 1rem; 
             padding: 1rem;
@@ -138,10 +136,10 @@
 </head>
 <body class="antialiased">
 
-    <!-- NAWIGACJA (PREMIUM) -->
+    <!-- NAWIGACJA -->
     <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-24"> <!-- Nieco wyższa nawigacja -->
+            <div class="flex items-center justify-between h-24"> <
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer group" onclick="window.scrollTo(0,0)">
                     <span class="text-2xl font-extrabold tracking-tighter group-hover:opacity-80 transition-opacity">
@@ -179,27 +177,26 @@
         </div>
     </nav>
 
-<!-- KOD BANERU DO WKLEJENIA NA STRONĘ - WERSJA 3D WIDE -->
+<!--BANERU -->
 <section class="custom-hero-component">
     <style>
         .custom-hero-component {
             width: 100%;
-            min-height: 650px; /* Zwiększona wysokość */
+            min-height: 650px; 
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 8%; /* Większa szerokość robocza */
+            padding: 80px 8%; 
             position: relative;
             font-family: 'Inter', -apple-system, sans-serif;
             overflow: hidden;
             
-            /* TUTAJ MOŻESZ ZMIENIAĆ ODLEGŁOŚĆ OD GÓRY STRONY */
             margin-top: 100px; 
             margin-bottom: 0px;
         }
 
-        /* LEWA STRONA: TEKST */
+      
         .custom-hero-component .hero-content-left {
             flex: 1;
             max-width: 650px;
@@ -208,7 +205,7 @@
         }
 
         .custom-hero-component .hero-title-gradient {
-            font-size: clamp(2.8rem, 6vw, 4.5rem); /* Większy tytuł */
+            font-size: clamp(2.8rem, 6vw, 4.5rem); 
             font-weight: 900;
             line-height: 1.05;
             margin-bottom: 28px;
@@ -227,14 +224,14 @@
             max-width: 500px;
         }
 
-        /* PRAWA STRONA: MIEJSCE NA OBRAZ Z EFEKTEM 3D */
+        
         .custom-hero-component .hero-content-right {
             flex: 1.2;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 2;
-            perspective: 1200px; /* Dodaje głębię 3D */
+            perspective: 1200px; 
         }
 
         .custom-hero-component .promo-image-box-3d {
@@ -245,7 +242,7 @@
             background: #f8fafc;
             border-radius: 60px;
             padding: 15px;
-            /* Efekt przesunięcia 3D */
+            
             transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg);
             transform-style: preserve-3d;
             box-shadow: -20px 40px 80px rgba(0,0,0,0.1);
@@ -255,7 +252,7 @@
         }
 
         .custom-hero-component .promo-image-box-3d:hover {
-            /* Prostowanie przy najechaniu */
+       
             transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.03);
             box-shadow: 0 50px 100px rgba(0,0,0,0.15);
         }
@@ -288,7 +285,7 @@
             transition: transform 0.8s ease;
         }
 
-        /* PRZYCISK */
+        
         .custom-hero-component .hero-btn {
             display: inline-block;
             background-color: #1e293b;
@@ -308,13 +305,13 @@
             box-shadow: 0 15px 35px rgba(30, 41, 59, 0.3);
         }
 
-        /* ANIMACJA DELIKATNEGO RUCHU 3D */
+        
         @keyframes hero3DFloat {
             0%, 100% { transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg) translateY(0px); }
             50% { transform: rotateY(-10deg) rotateX(15deg) rotateZ(3deg) translateY(-20px); }
         }
 
-        /* MOBILNOŚĆ */
+       
         @media (max-width: 1024px) {
             .custom-hero-component .promo-image-box-3d {
                 height: 350px;
@@ -352,14 +349,12 @@
     <div class="hero-content-right">
         <div class="promo-image-box-3d">
             <div class="inner-img-frame">
-                <!-- Obrazek z Twojego folderu -->
                 <img src="images/vanishcraft.github.io_vanishcraft_ (1).png" alt="" onerror="this.style.display='none'">
             </div>
         </div>
     </div>
 </section>
 <!-- KONIEC BANERU -->
-    <!-- O MNIE SECTION -->
     <section id="about" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -392,24 +387,22 @@
             </div>
         </div>
     </section>
-    <!-- Biblioteka Tailwind (usuń tę linię, jeśli już ją masz w projekcie) -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-    /* Animacja kart partnerów */
+  
     .partner-card-component {
         transition: all 1000ms cubic-bezier(0.34, 1.56, 0.64, 1);
         will-change: transform, opacity;
     }
 
-    /* Efekt czarno-biały dla bocznych logotypów */
     .partner-logo-gray {
         filter: grayscale(100%);
         opacity: 0.2;
         transition: all 0.4s ease;
     }
 
-    /* Aktywne (środkowe) logo oraz po najechaniu */
+   
     .partner-card-component.active .partner-logo-gray,
     .partner-card-component:hover .partner-logo-gray {
         filter: grayscale(0%);
@@ -420,7 +413,7 @@
 <section id="portfolio-trusted-section" class="w-full bg-transparent py-12 overflow-hidden font-sans opacity-0 transition-opacity duration-1000">
     <div class="max-w-5xl mx-auto px-4">
         
-        <!-- Nagłówek sekcji -->
+       
         <div class="flex flex-col items-center justify-center mb-10">
             <h2 class="text-xl md:text-2xl font-black tracking-[0.3em] uppercase text-black text-center">
                 Zaufali mi
@@ -428,16 +421,16 @@
             <div class="h-1 w-12 bg-black mt-2 opacity-10"></div>
         </div>
 
-        <!-- Kontener dla logotypów -->
+       
         <div id="logos-carousel-wrapper" class="relative h-[120px] flex items-center justify-center w-full select-none">
-            <!-- JavaScript wygeneruje tutaj karty -->
+           
         </div>
     </div>
 </section>
 
 <script>
     (function() {
-        // KONFIGURACJA PLIKÓW I LINKÓW
+        
         const LOGO_DATA = [
             { id: 1, img: "images/Zrzut_ekranu_2025-08-14_172843-3.png", link: "#" },
             { id: 2, img: "images/serverlogo.png", link: "#" },
@@ -469,7 +462,7 @@
                 img.alt = "Partner";
                 img.className = "partner-logo-gray w-full h-full object-contain transition-transform duration-500 group-hover:scale-105";
                 
-                // Ikona zastępcza jeśli brak zdjęcia
+               
                 img.onerror = function() {
                     this.parentElement.innerHTML = '<svg class="w-6 h-6 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>';
                 };
@@ -529,16 +522,16 @@
         else window.addEventListener('load', buildLogos);
     })();
 </script>
-    <!-- DISCORD SECTION (PROFESJONALNA) -->
+   
     <section id="discord" class="py-32 bg-[#0a0a0a] text-white relative overflow-hidden">
-        <!-- Background Effects -->
+        
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#5865F2] rounded-full mix-blend-screen filter blur-[120px] opacity-10 animate-pulse"></div>
         <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-20">
                 
-                <!-- Text Content -->
+                
                 <div class="lg:w-1/2 reveal">
                     <div class="inline-flex items-center gap-2 mb-6">
                         <i data-lucide="server" class="text-[#5865F2]"></i>
@@ -562,14 +555,14 @@
                     </div>
                 </div>
 
-                <!-- Card Visualization -->
+            
                 <div class="lg:w-1/2 w-full reveal delay-200 flex justify-center lg:justify-end">
-                    <!-- 3D Card Effect Container -->
+                
                     <div class="relative w-full max-w-md group perspective-1000">
                         <div class="absolute -inset-1 bg-gradient-to-r from-[#5865F2] to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
                         
                         <div class="relative bg-[#1a1b1e] border border-[#2d2f36] rounded-2xl p-6 shadow-2xl discord-glow transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-[1.02]">
-                            <!-- Bot Header -->
+                            
                             <div class="flex items-center justify-between mb-8">
                                 <div class="flex items-center gap-4">
                                     <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#5865F2] to-[#404EED] flex items-center justify-center shadow-lg">
@@ -586,7 +579,7 @@
                                 </div>
                             </div>
 
-                            <!-- Bot Stats Grid -->
+                           
                             <div class="grid grid-cols-2 gap-3 mb-6">
                                 <div class="bg-[#232428] p-4 rounded-xl border border-gray-800 hover:border-[#5865F2] transition-colors">
                                     <div class="text-gray-500 text-xs uppercase mb-1">Serwery</div>
@@ -598,7 +591,7 @@
                                 </div>
                             </div>
 
-                            <!-- Code Snippet Effect -->
+                          
                             <div class="bg-[#0f1012] rounded-lg p-4 font-mono text-xs text-gray-400 border border-gray-800 relative overflow-hidden">
                                 <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#5865F2]/5 to-transparent animate-pulse pointer-events-none"></div>
                                 <p><span class="text-purple-400">const</span> <span class="text-blue-400">order</span> = <span class="text-yellow-400">new</span> Ticket();</p>
@@ -619,7 +612,7 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
+  
     <section id="portfolio" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="mb-16 reveal">
@@ -628,9 +621,9 @@
             </div>
 
             <div class="grid grid-cols-1 gap-16">
-              <!-- Grid Mniejszych Projektów -->
+           
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Projekt 2 -->
+                   
                     <div class="group rounded-3xl overflow-hidden relative shadow-xl reveal delay-200 h-[400px]">
                         <img src="images/vanishcraft.github.io_vanishcraft_ (1).png" alt="Bot Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                         onerror="this.src='https://placehold.co/600x600/111/FFF?text=Bot+Dashboard';">
@@ -645,7 +638,7 @@
                         </div>
                     </div>
 
-                    <!-- Projekt 3 -->
+                   
                     <div class="group rounded-3xl overflow-hidden relative shadow-xl reveal delay-300 h-[400px]">
                         <img src="images/printlu.pl_index.html.png" alt="Grafika" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                         onerror="this.src='https://placehold.co/600x600/111/FFF?text=Branding+Pack';">
@@ -664,12 +657,12 @@
         </div>
     </section>
 
-  <!-- START: Komponent Kontaktowy -->
+  <!--Komponent Kontaktowy -->
 <section id="contact-component" class="w-full max-w-6xl mx-auto my-10 bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden" style="font-family: 'Outfit', sans-serif;">
     
-    <!-- Import czcionki (możesz przenieść do Head swojej strony) -->
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind (jeśli nie masz go na stronie, zostaw ten skrypt) -->
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -695,7 +688,7 @@
 
     <div class="flex flex-col lg:flex-row animate-component">
         
-        <!-- LEWA SEKCJA: Info & Discord -->
+       
         <div class="lg:w-[35%] bg-slate-900 p-8 md:p-10 flex flex-col justify-between text-white relative">
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-transparent pointer-events-none"></div>
 
@@ -725,13 +718,13 @@
                 </div>
             </div>
 
-            <!-- Dymek powiadomienia -->
+           
             <div id="toast-comp" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[10px] font-bold px-4 py-1 rounded-full opacity-0 transition-all pointer-events-none">
                 SKOPIOWANO!
             </div>
         </div>
 
-        <!-- PRAWA SEKCJA: Formularz -->
+        
         <div class="lg:w-[65%] p-8 md:p-10 bg-white">
             <form action="https://kwes.io/api/foreign/forms/TWOJE_ID" method="POST" class="kwes-form grid grid-cols-1 md:grid-cols-2 gap-5">
                 
@@ -763,7 +756,7 @@
         </div>
     </div>
 
-    <!-- Skrypty KwesForms (jeśli nie masz ich na stronie) -->
+   
     <script src="https://kwesforms.com/v2/kwes-forms.js" defer></script>
 
     <script>
@@ -809,9 +802,9 @@
         </div>
     </footer>
 
-    <!-- SKRYPTY JS (KwesForms Script musisz dodać sam wg instrukcji, tutaj standardowe JS) -->
+
     <script>
-        // Inicjalizacja ikon
+        
         lucide.createIcons();
 
         // Mobile Menu Toggle
@@ -848,10 +841,8 @@
         }
 
         window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
+        reveal(); 
     </script>
-    
-    <!-- Opcjonalnie: Skrypt KwesForms (odkomentuj jeśli masz konto) -->
-    <!-- <script src="https://kwes.io/v2/kwes-script.js" defer></script> -->
+
 </body>
 </html>
