@@ -179,136 +179,146 @@
         </div>
     </nav>
 
-<!-- KOD BANERU DO WKLEJENIA NA STRONĘ -->
+<!-- KOD BANERU DO WKLEJENIA NA STRONĘ - WERSJA 3D WIDE -->
 <section class="custom-hero-component">
     <style>
-        /* Stylizacja zamknięta wewnątrz komponentu */
         .custom-hero-component {
             width: 100%;
-            min-height: 500px;
+            min-height: 650px; /* Zwiększona wysokość */
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 60px 10%;
+            padding: 80px 8%; /* Większa szerokość robocza */
             position: relative;
             font-family: 'Inter', -apple-system, sans-serif;
             overflow: hidden;
             
             /* TUTAJ MOŻESZ ZMIENIAĆ ODLEGŁOŚĆ OD GÓRY STRONY */
-            margin-top: 100px; 
-            margin-bottom: 0px; /* Dodatkowo dodałem odstęp od dołu */
+            margin-top: 0px; 
+            margin-bottom: 0px;
         }
 
         /* LEWA STRONA: TEKST */
         .custom-hero-component .hero-content-left {
-            flex: 1.2;
-            max-width: 600px;
+            flex: 1;
+            max-width: 650px;
             z-index: 2;
+            padding-right: 40px;
         }
 
         .custom-hero-component .hero-title-gradient {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1.5px;
-            background: linear-gradient(135deg, #1e293b 0%, #64748b 100%);
+            font-size: clamp(2.8rem, 6vw, 4.5rem); /* Większy tytuł */
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .custom-hero-component .hero-description {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: #64748b;
-            margin-bottom: 35px;
-            line-height: 1.7;
+            margin-bottom: 45px;
+            line-height: 1.6;
+            max-width: 500px;
         }
 
-        /* PRAWA STRONA: MIEJSCE NA OBRAZ */
+        /* PRAWA STRONA: MIEJSCE NA OBRAZ Z EFEKTEM 3D */
         .custom-hero-component .hero-content-right {
-            flex: 1;
+            flex: 1.2;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
+            align-items: center;
             z-index: 2;
-            min-width: 300px; /* Zapewnia widoczność miejsca na zdjęcie */
+            perspective: 1200px; /* Dodaje głębię 3D */
         }
 
-        .custom-hero-component .promo-image-box {
+        .custom-hero-component .promo-image-box-3d {
             position: relative;
-            padding: 12px;
-            background: #f1f5f9; /* Jasnoszare tło widoczne zawsze */
-            border-radius: 50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-            animation: heroFloatAnim 6s ease-in-out infinite;
-            border: 1px solid rgba(0,0,0,0.03);
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+            background: #f8fafc;
+            border-radius: 60px;
+            padding: 15px;
+            /* Efekt przesunięcia 3D */
+            transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg);
+            transform-style: preserve-3d;
+            box-shadow: -20px 40px 80px rgba(0,0,0,0.1);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            animation: hero3DFloat 8s ease-in-out infinite;
+        }
+
+        .custom-hero-component .promo-image-box-3d:hover {
+            /* Prostowanie przy najechaniu */
+            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.03);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.15);
         }
 
         .custom-hero-component .inner-img-frame {
             width: 100%;
-            width: 450px; /* Stała szerokość dla pewności widoczności */
-            height: 350px; /* Stała wysokość dla pewności widoczności */
-            border-radius: 40px;
+            height: 100%;
+            border-radius: 45px;
             overflow: hidden;
-            background-color: #e2e8f0; /* Kolor gdy nie ma zdjęcia */
+            background-color: #e2e8f0;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
         }
 
-        /* Napis widoczny tylko gdy obrazek się nie ładuje */
         .custom-hero-component .inner-img-frame::before {
-            content: 'Miejsce na obraz';
+            content: 'Prezentacja Projektu';
             color: #94a3b8;
-            font-size: 0.9rem;
-            position: absolute;
-            z-index: 1;
+            font-weight: 500;
         }
 
         .custom-hero-component .inner-img-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: relative;
-            z-index: 2; /* Obrazek przykrywa napis */
-            transition: transform 0.5s ease;
-        }
-
-        .custom-hero-component .inner-img-frame:hover img {
-            transform: scale(1.05);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.8s ease;
         }
 
         /* PRZYCISK */
         .custom-hero-component .hero-btn {
             display: inline-block;
-            background-color: #334155;
+            background-color: #1e293b;
             color: #ffffff;
-            padding: 16px 36px;
-            border-radius: 14px;
+            padding: 18px 45px;
+            border-radius: 16px;
             font-weight: 600;
+            font-size: 1.1rem;
             text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(30, 41, 59, 0.2);
         }
 
         .custom-hero-component .hero-btn:hover {
-            background-color: #1e293b;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background-color: #0f172a;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(30, 41, 59, 0.3);
         }
 
-        /* ANIMACJA PŁYWANIA */
-        @keyframes heroFloatAnim {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        /* ANIMACJA DELIKATNEGO RUCHU 3D */
+        @keyframes hero3DFloat {
+            0%, 100% { transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg) translateY(0px); }
+            50% { transform: rotateY(-10deg) rotateX(15deg) rotateZ(3deg) translateY(-20px); }
         }
 
         /* MOBILNOŚĆ */
         @media (max-width: 1024px) {
-            .custom-hero-component .inner-img-frame {
-                width: 350px;
-                height: 280px;
+            .custom-hero-component .promo-image-box-3d {
+                height: 350px;
+                transform: rotateY(-10deg) rotateX(5deg);
             }
         }
 
@@ -316,44 +326,40 @@
             .custom-hero-component {
                 flex-direction: column;
                 text-align: center;
-                padding: 60px 20px;
+                padding: 100px 20px;
+                height: auto;
             }
             .custom-hero-component .hero-content-left {
-                margin-bottom: 50px;
-                padding: 0;
+                margin-bottom: 80px;
+                padding-right: 0;
             }
-            .custom-hero-component .hero-content-right {
-                justify-content: center;
-                width: 100%;
-            }
-            .custom-hero-component .inner-img-frame {
-                width: 100%;
-                max-width: 400px;
-                height: 250px;
+            .custom-hero-component .promo-image-box-3d {
+                transform: none !important;
+                height: 300px;
+                animation: none;
             }
         }
     </style>
 
     <div class="hero-content-left">
-        <h1 class="hero-title-gradient">Twój Projekt<br>w nowym świetle</h1>
+        <h1 class="hero-title-gradient">Większa skala.<br>Lepszy design.</h1>
         <p class="hero-description">
-            Elegancka sekcja promocyjna, którą możesz wstawić w dowolne miejsce swojej strony. 
-            Stonowane kolory antracytu i płynne animacje zapewniają profesjonalny wygląd.
+            Przedstawiamy baner o rozszerzonej szerokości z efektem głębi 3D. 
+            Idealny do prezentacji Twoich najważniejszych projektów w nowoczesny sposób.
         </p>
         <a href="https://xfazi-m.github.io/portfolio/Discord" class="hero-btn">Kontakt</a>
     </div>
 
     <div class="hero-content-right">
-        <div class="promo-image-box">
+        <div class="promo-image-box-3d">
             <div class="inner-img-frame">
-                <!-- Sprawdź czy plik jest w folderze image/ -->
-                <img src="images/vanishcraft.github.io_vanishcraft_ (1).png" alt="" onerror="this.style.display='none'">
+                <!-- Obrazek z Twojego folderu -->
+                <img src="https://imgur.com/a/5zreNQr" alt="" onerror="this.style.display='none'">
             </div>
         </div>
     </div>
 </section>
 <!-- KONIEC BANERU -->
-
     <!-- O MNIE SECTION -->
     <section id="about" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
