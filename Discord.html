@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partnerzy Discord | Premium</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script>
@@ -49,7 +46,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- TŁO ANIMOWANE (ORBS) --- */
+
         .orb {
             position: absolute;
             border-radius: 50%;
@@ -61,7 +58,7 @@
         .orb-1 { width: 400px; height: 400px; background: #5865F2; top: -100px; left: -100px; animation: float 15s infinite alternate; }
         .orb-2 { width: 300px; height: 300px; background: #818CF8; bottom: 0; right: -50px; animation: float-delayed 18s infinite alternate; }
 
-        /* --- NOWOCZESNE WEJŚCIA (Staggered Reveal) --- */
+
         .reveal-element {
             opacity: 0;
             transform: translateY(30px);
@@ -75,22 +72,22 @@
             filter: blur(0);
         }
 
-        /* --- KARTA 3D TILT --- */
+
         .tilt-card {
             transform-style: preserve-3d;
             transform: perspective(1000px);
-            transition: transform 0.1s ease; /* Bardzo szybka reakcja na ruch */
+            transition: transform 0.1s ease; 
         }
         
         .tilt-content {
-            transform: translateZ(20px); /* Efekt głębi */
+            transform: translateZ(20px); 
         }
 
         .tilt-card:hover {
             box-shadow: 0 30px 60px -12px rgba(88, 101, 242, 0.25);
         }
 
-        /* --- PRZYCISKI PREMIUM --- */
+
         .btn-glow {
             position: relative;
             overflow: hidden;
@@ -120,7 +117,7 @@
             box-shadow: 0 10px 20px -5px rgba(88, 101, 242, 0.4);
         }
 
-        /* --- LOGO HOVER --- */
+
         .logo-container {
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -133,13 +130,13 @@
 </head>
 <body class="min-h-screen flex flex-col relative font-sans">
 
-    <!-- Animowane tło -->
+
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
     </div>
 
-    <!-- Navbar -->
+
     <nav class="w-full bg-white/70 backdrop-blur-xl border-b border-white/50 sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center text-slate-600 hover:text-discord font-bold tracking-tight transition-colors group">
@@ -151,7 +148,7 @@
         </div>
     </nav>
 
-    <!-- Header Sekcji -->
+ 
     <header class="pt-24 pb-16 text-center px-4 relative z-10">
         <div class="reveal-element" style="transition-delay: 0ms;">
             <div class="inline-flex items-center justify-center w-24 h-24 rounded-[2rem] bg-white shadow-glass mb-8 border border-white/60 relative overflow-hidden group">
@@ -169,17 +166,17 @@
         </p>
     </header>
 
-    <!-- Główna sekcja -->
+
     <main class="container mx-auto px-4 pb-32 flex-grow relative z-10">
         
         <div class="flex flex-col md:flex-row justify-center items-stretch gap-10 max-w-6xl mx-auto w-full perspective-container">
 
-            <!-- KARTA 1 -->
+
             <div class="reveal-element w-full md:w-1/2" style="transition-delay: 300ms;">
                 <article class="tilt-card h-full bg-white/80 backdrop-blur-md rounded-[2.5rem] p-10 border border-white shadow-glass flex flex-col items-center text-center relative overflow-hidden group cursor-default" data-tilt>
                     
                     <div class="tilt-content w-full flex flex-col items-center h-full">
-                        <!-- Obrazek -->
+
                         <div class="logo-container w-40 h-40 rounded-full p-2 bg-white shadow-lg mb-8 border-4 border-slate-50 relative z-20">
                             <img 
                                 src="images/Zrzut_ekranu_2025-08-14_172843-3.png" 
@@ -208,12 +205,12 @@
                 </article>
             </div>
 
-            <!-- KARTA 2 -->
+
             <div class="reveal-element w-full md:w-1/2" style="transition-delay: 450ms;">
                 <article class="tilt-card h-full bg-white/80 backdrop-blur-md rounded-[2.5rem] p-10 border border-white shadow-glass flex flex-col items-center text-center relative overflow-hidden group cursor-default" data-tilt>
                     
                     <div class="tilt-content w-full flex flex-col items-center h-full">
-                        <!-- Obrazek -->
+             
                         <div class="logo-container w-40 h-40 rounded-full p-2 bg-white shadow-lg mb-8 border-4 border-slate-50 relative z-20">
                             <img 
                                 src="images/serverlogo.png" 
@@ -256,10 +253,9 @@
         </div>
     </footer>
 
-    <!-- SKRYPTY ANIMACJI -->
+
     <script>
-        // --- 1. Obsługa wejścia (Intersection Observer) ---
-        // Elementy pojawiają się dopiero gdy są widoczne na ekranie
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px"
@@ -269,7 +265,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Animuj tylko raz
+                    observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
@@ -278,8 +274,7 @@
             observer.observe(el);
         });
 
-        // --- 2. Profesjonalny efekt 3D Tilt (Vanilla JS) ---
-        // Oblicza pozycję myszki względem środka karty i obraca ją
+
         const cards = document.querySelectorAll('.tilt-card');
 
         cards.forEach(card => {
@@ -288,19 +283,19 @@
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 
-                // Obliczanie środka
+              
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                // Zakres rotacji (dzielimy przez 20 aby ruch był subtelny)
-                const rotateX = ((y - centerY) / 20) * -1; // Odwracamy oś Y
+        
+                const rotateX = ((y - centerY) / 20) * -1; 
                 const rotateY = (x - centerX) / 20;
 
-                // Aplikowanie stylu
+             
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             });
 
-            // Reset po zjechaniu myszką
+            
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
             });
