@@ -1,18 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | X_FAZI</title>
-    <meta name="description" content="Profesjonalne strony WWW">
-     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- 
+     <!-- 
     ========================================================================================================================
     AUTOR PROJEKTU I WŁAŚCICIEL KODU:
     
@@ -28,8 +15,16 @@
     NA PODSTAWIE USTAWY Z DNIA 4 LUTEGO 1994 R. O PRAWIE AUTORSKIM I PRAWACH POKREWNYCH (DZ. U. Z 2021 R. POZ. 1062 Z PÓŹN. ZM.).
     KOPIOWANIE, ROZPOWSZECHNIANIE LUB MODYFIKACJA BEZ PISEMNEJ ZGODY AUTORA (X_FAZI) JEST ZABRONIONE.
     ========================================================================================================================
-    -->
-
+    -->   
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xfazi.pl</title>
+    <meta name="description" content="Profesjonalne: Grafiki oraz Strony WWW.">
+    <link rel="icon" href="https://i.postimg.cc/PJgjXDH7/dzxfds.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -38,616 +33,483 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        dark: '#0a0a0a',
-                        light: '#FAFAFA',
-                        grey: '#888888',
-                        discord: '#5865F2',
-                        discordHover: '#4752C4'
+                        primary: '#6366f1', 
+                        primaryDark: '#4f46e5',
+                        secondary: '#f3f4f6', 
+                        dark: '#1e293b',
+                        discord: '#5865F2', 
                     },
-                    animation: {
-                        'scroll': 'scroll 30s linear infinite',
-                        'blob': 'blob 7s infinite',
-                    },
-                    keyframes: {
-                        scroll: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-100%)' },
-                        },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
+                    borderRadius: {
+                        '3xl': '1.5rem',
+                        '4xl': '2rem',
                     }
                 }
             }
         }
     </script>
-
     <style>
- 
-        body {
-            background-color: #ffffff;
-            color: #0a0a0a;
-            overflow-x: hidden; 
-        }
-
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); 
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #FAFAFA;
+            background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #222;
-            border-radius: 5px;
-            border: 2px solid #FAFAFA;
+            background: #cbd5e1;
+            border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #000;
-        }
-
-    
-        img {
-            background-color: #f0f0f0;
-            position: relative;
-        }
-        img::after { 
-            content: "Brak pliku: " attr(src);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #f3f4f6;
-            color: #9ca3af;
-            font-size: 0.75rem;
-            text-align: center;
-            padding: 1rem;
-            font-weight: 500;
-        }
-
-     
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-
-        .discord-glow {
-            box-shadow: 0 0 40px -10px rgba(88, 101, 242, 0.4);
-            transition: box-shadow 0.3s ease;
-        }
-        .discord-glow:hover {
-            box-shadow: 0 0 60px -10px rgba(88, 101, 242, 0.6);
+            background: #94a3b8;
         }
         
-        .kw-alert { 
-            margin-top: 1rem; 
-            padding: 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .play-pulse {
+            animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .animate-marquee {
+            animation: marquee 60s linear infinite;
+        }
+        
+        .hover\:pause:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .mask-gradient {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
     </style>
+
 </head>
-<body class="antialiased">
-   <div class="fixed inset-0 z-[9999] flex flex-col items-center justify-center p-6 text-center mobile-bg text-white lg:hidden h-screen w-screen overflow-hidden">
-        
-       
-        <div class="absolute top-10 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-10 right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
-
-    
-        <div class="relative z-10 max-w-md mx-auto space-y-8 animate-fade-in-up">
-            
-            <div class="animate-float">
-                <div class="relative inline-block">
-                    <i class="fa-solid fa-desktop text-6xl text-blue-400 drop-shadow-lg"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="space-y-4">
-                <h1 class="text-3xl font-serif font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-black-200 to-black-200">
-                    Wersja Desktopowa
-                </h1>
-                
-                <p class="text-gray-300 font-light leading-relaxed">
-                    Ta strona została zaprojektowana z myślą o dużych ekranach. 
-                    Aby zobaczyć moje portfolio w pełnej okazałości, proszę skorzystaj z komputera.
-                </p>
-            </div>
+<body class="bg-white text-slate-800 antialiased selection:bg-primary selection:text-white">
+    <div id="video-modal" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-md transition-all duration-300 opacity-0">
+        <div id="video-modal-content" class="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 transform scale-95 transition-all duration-300">
+            <button onclick="closeVideo()" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-primary text-white p-2 rounded-full backdrop-blur-sm transition-colors group">
+                <svg class="w-6 h-6 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <iframe id="video-frame" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        </div>
+        <div class="absolute inset-0 -z-10" onclick="closeVideo()"></div>
     </div>
-    
-    <div class="hidden lg:block min-h-screen">
- 
-    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-24"> 
-                <!-- Logo -->
-                <div class="flex-shrink-0 cursor-pointer group" onclick="window.scrollTo(0,0)">
-                    <span class="text-2xl font-extrabold tracking-tighter group-hover:opacity-80 transition-opacity">
-                        X_FAZI<span class="text-gray-400 font-light"> Portfolio</span>
-                    </span>
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-slate-900">
+                        X_FAZI<span class="text-primary">.</span>
+                    </a>
                 </div>
-                
-              
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-1">
-                        <a href="#home" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-50">Strona Główna</a>
-                        <a href="#about" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-50">O mnie</a>
-                        <a href="https://xfazi-m.github.io/portfolio/Discord" class="px-4 py-2 text-sm font-bold text-[#5865F2] bg-[#5865F2]/5 hover:bg-[#5865F2]/10 transition-colors rounded-full">Discord</a>
-                        <a href="#portfolio" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-50">Projekty</a>
-                    </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#o-mnie" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">O mnie</a>
+                    <a href="#o-mnie" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Loga</a>
+                    <a href="#grafiki" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Grafiki</a>
+                    <a href="#strony" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Strony</a>
+                    <a href="#opinie" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Opinie</a>
+                    <a href="#kontakt" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary transition-all shadow-lg hover:shadow-primary/30">
+                        Współpraca
+                    </a>
                 </div>
-
-               
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-gray-100 focus:outline-none">
-                        <i data-lucide="menu" class="w-7 h-7"></i>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2 rounded-xl hover:bg-secondary transition">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </div>
-
-     
-        <div class="md:hidden hidden bg-white border-b border-gray-100 absolute w-full" id="mobile-menu">
-            <div class="px-4 pt-4 pb-6 space-y-2 shadow-xl">
-                <a href="#home" class="block px-4 py-3 rounded-xl text-base font-medium hover:bg-gray-50" onclick="toggleMenu()">Strona Główna</a>
-                <a href="#about" class="block px-4 py-3 rounded-xl text-base font-medium hover:bg-gray-50" onclick="toggleMenu()">O mnie</a>
-                <a href="https://xfazi-m.github.io/portfolio/Discord" class="block px-4 py-3 rounded-xl text-base font-bold text-[#5865F2] bg-[#5865F2]/5" onclick="toggleMenu()">Discord</a>
-                <a href="#portfolio" class="block px-4 py-3 rounded-xl text-base font-medium hover:bg-gray-50" onclick="toggleMenu()">Projekty</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl rounded-b-3xl">
+                <a href="#o-mnie" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">O mnie</a>
+                <a href="#grafiki" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Loga</a>
+                <a href="#grafiki" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Grafiki</a>
+                <a href="#strony" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Strony</a>
+                <a href="#opinie" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Opinie</a>
+                <a href="#kontakt" class="block px-4 py-3 mt-4 text-center rounded-xl text-base font-medium bg-primary text-white hover:bg-primaryDark">Współpraca</a>
             </div>
         </div>
     </nav>
-
-
-<section class="custom-hero-component">
-    <style>
-        .custom-hero-component {
-            width: 100%;
-            min-height: 650px; 
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 80px 8%; 
-            position: relative;
-            font-family: 'Inter', -apple-system, sans-serif;
-            overflow: hidden;
-            
-            margin-top: 100px; 
-            margin-bottom: 0px;
-        }
-
-      
-        .custom-hero-component .hero-content-left {
-            flex: 1;
-            max-width: 650px;
-            z-index: 2;
-            padding-right: 40px;
-        }
-
-        .custom-hero-component .hero-title-gradient {
-            font-size: clamp(2.8rem, 6vw, 4.5rem); 
-            font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 28px;
-            letter-spacing: -2px;
-            background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .custom-hero-component .hero-description {
-            font-size: 1.25rem;
-            color: #64748b;
-            margin-bottom: 45px;
-            line-height: 1.6;
-            max-width: 500px;
-        }
-
-        
-        .custom-hero-component .hero-content-right {
-            flex: 1.2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            perspective: 1200px; 
-        }
-
-        .custom-hero-component .promo-image-box-3d {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            height: 450px;
-            background: #f8fafc;
-            border-radius: 60px;
-            padding: 15px;
-            
-            transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg);
-            transform-style: preserve-3d;
-            box-shadow: -20px 40px 80px rgba(0,0,0,0.1);
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            animation: hero3DFloat 8s ease-in-out infinite;
-        }
-
-        .custom-hero-component .promo-image-box-3d:hover {
-       
-            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.03);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.15);
-        }
-
-        .custom-hero-component .inner-img-frame {
-            width: 100%;
-            height: 100%;
-            border-radius: 45px;
-            overflow: hidden;
-            background-color: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .custom-hero-component .inner-img-frame::before {
-            content: 'Prezentacja Projektu';
-            color: #94a3b8;
-            font-weight: 500;
-        }
-
-        .custom-hero-component .inner-img-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: transform 0.8s ease;
-        }
-
-        
-        .custom-hero-component .hero-btn {
-            display: inline-block;
-            background-color: #1e293b;
-            color: #ffffff;
-            padding: 18px 45px;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(30, 41, 59, 0.2);
-        }
-
-        .custom-hero-component .hero-btn:hover {
-            background-color: #0f172a;
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(30, 41, 59, 0.3);
-        }
-
-        
-        @keyframes hero3DFloat {
-            0%, 100% { transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg) translateY(0px); }
-            50% { transform: rotateY(-10deg) rotateX(15deg) rotateZ(3deg) translateY(-20px); }
-        }
-
-       
-        @media (max-width: 1024px) {
-            .custom-hero-component .promo-image-box-3d {
-                height: 350px;
-                transform: rotateY(-10deg) rotateX(5deg);
-            }
-        }
-
-        @media (max-width: 900px) {
-            .custom-hero-component {
-                flex-direction: column;
-                text-align: center;
-                padding: 100px 20px;
-                height: auto;
-            }
-            .custom-hero-component .hero-content-left {
-                margin-bottom: 80px;
-                padding-right: 0;
-            }
-            .custom-hero-component .promo-image-box-3d {
-                transform: none !important;
-                height: 300px;
-                animation: none;
-            }
-        }
-    </style>
-
-    <div class="hero-content-left">
-        <h1 class="hero-title-gradient">Stwórz ze mną<br>swoją wywarzoną stronę</h1>
-        <p class="hero-description">
-        Ty dostarczasz pomysł i wizję, a ja zajmuję się resztą. Przekuję Twoją koncepcję w czysty kod, skonfiguruję domenę i zadbam o każdy techniczny detal, by Twój projekt ożył w sieci.
-        </p>
-        <a href="https://xfazi-m.github.io/portfolio/Discord" class="hero-btn">Kontakt</a>
-    </div>
-
-    <div class="hero-content-right">
-        <div class="promo-image-box-3d">
-            <div class="inner-img-frame">
-                <img src="images/vanishcraft.github.io_vanishcraft_ (1).png" alt="" onerror="this.style.display='none'">
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 right-0 -z-10 opacity-30 translate-x-1/3 -translate-y-1/4">
+            <div class="w-[600px] h-[600px] bg-primary rounded-full blur-[120px]"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 -z-10 opacity-20 -translate-x-1/3 translate-y-1/4">
+            <div class="w-[500px] h-[500px] bg-blue-400 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-secondary text-primary text-xs font-semibold tracking-wide uppercase mb-6 fade-in-up">
+                Gotowy do pracy
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight mb-8 fade-in-up delay-100">
+                Design & <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Web Development.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10 fade-in-up delay-200">
+                Łączę estetykę z technologią. Tworzę spójne identyfikacje wizualne, oraz nowoczesne strony internetowe.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                <a href="#grafiki" class="px-8 py-4 rounded-full bg-primary text-white font-semibold hover:bg-primaryDark transition shadow-lg hover:shadow-primary/40">
+                    Zobacz Portfolio
+                </a>
+                <a href="#kontakt" class="px-8 py-4 rounded-full bg-white text-slate-700 border border-gray-200 font-semibold hover:bg-gray-50 hover:border-gray-300 transition">
+                    Skontaktuj się
+                </a>
             </div>
         </div>
-    </div>
-</section>
-
-    <section id="about" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1 reveal">
-                    <div class="relative group">
-                        <div class="absolute inset-0 bg-black rounded-2xl transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                        <img src="images/424.png" 
-                             alt="Moje zdjęcie" 
-                             class="relative w-full aspect-[4/5] object-cover rounded-2xl shadow-lg bg-white grayscale group-hover:grayscale-0 transition-all duration-500"
-                             onerror="this.src='https://i.imgur.com/lBrwDK7.png';">
-                    </div>
+    </section>
+    <section id="o-mnie" class="py-20 bg-secondary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-primary rounded-3xl rotate-3 opacity-10"></div>
+                    <img src="https://i.imgur.com/Ysrsnbx.jpeg" alt="Portret" class="relative rounded-3xl shadow-2xl w-full object-cover h-[500px] grayscale hover:grayscale-0 transition duration-500">
                 </div>
-                <div class="order-1 lg:order-2 reveal delay-100">
-                    <h2 class="text-4xl font-bold mb-6">Kod to tylko narzędzie.<br>Ja dostarczam rozwiązania.</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Dobra strona to coś więcej niż ładny wygląd. To szybkość działania, intuicyjna obsługa i techniczna niezawodność. Rozwiązuję problemy z wydajnością, dopasowuję funkcje do Twoich celów i dbam o to, by technologia pracowała na Twój sukces, a nie była przeszkodą.
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">O mnie</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Od dwóch lat zajmuję się projektowaniem graficznym i budowaniem stron internetowych. Nie uznaję półśrodków jeśli coś robię, musi to wyglądać i działać profesjonalnie. Moja praca to połączenie dwóch światów: czystego kodu w HTML i CSS oraz dopracowanej grafiki.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                       Równolegle zajmuję się grafiką – w Adobe Illustrator i Photoshopie tworzę logotypy oraz identyfikację wizualną. Łączę techniczne umiejętności z estetyką, co pozwala mi dbać o wysoką jakość zarówno w działaniu strony, jak i w jej wyglądzie.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-8 border-t border-gray-200 pt-8">
-                        <div>
-                            <h3 class="text-5xl font-extrabold text-black mb-1">1+</h3>
-                            <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Lata doświadczenia</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center">
+                            <div class="text-primary font-bold text-xl mb-1">2+</div>
+                            <div class="text-slate-500 text-sm">Lat doświadczenia</div>
                         </div>
-                        <div>
-                            <h3 class="text-5xl font-extrabold text-black mb-1">100%</h3>
-                            <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Profesjonalizmu</p>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center">
+                            <div class="text-primary font-bold text-xl mb-1">10+</div>
+                            <div class="text-slate-500 text-sm">Zrealizowanych projektów</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center">
+                            <div class="text-primary font-bold text-xl mb-1">100%</div>
+                            <div class="text-slate-500 text-sm">Zadowolonych klientów</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-  
-    .partner-card-component {
-        transition: all 1000ms cubic-bezier(0.34, 1.56, 0.64, 1);
-        will-change: transform, opacity;
-    }
-
-    .partner-logo-gray {
-        filter: grayscale(100%);
-        opacity: 0.2;
-        transition: all 0.4s ease;
-    }
-
-   
-    .partner-card-component.active .partner-logo-gray,
-    .partner-card-component:hover .partner-logo-gray {
-        filter: grayscale(0%);
-        opacity: 1;
-    }
-</style>
-
-<section id="portfolio-trusted-section" class="w-full bg-transparent py-12 overflow-hidden font-sans opacity-0 transition-opacity duration-1000">
-    <div class="max-w-5xl mx-auto px-4">
-        
-       
-        <div class="flex flex-col items-center justify-center mb-10">
-            <h2 class="text-xl md:text-2xl font-black tracking-[0.3em] uppercase text-black text-center">
-                Zaufali mi
-            </h2>
-            <div class="h-1 w-12 bg-black mt-2 opacity-10"></div>
-        </div>
-
-       
-        <div id="logos-carousel-wrapper" class="relative h-[120px] flex items-center justify-center w-full select-none">
-           
-        </div>
-    </div>
-</section>
-
-<script>
-    (function() {
-        
-        const LOGO_DATA = [
-            { id: 1, img: "images/Zrzut_ekranu_2025-08-14_172843-3.png", link: "#" },
-            { id: 2, img: "images/serverlogo.png", link: "#" },
-            { id: 3, img: "images/4f.png", link: "#" },
-            { id: 4, img: "images/Zrzut_ekranu_2025-08-14_172843-3.png", link: "#" },
-            { id: 5, img: "images/4f.png", link: "#" },
-            { id: 6, img: "images/serverlogo.png", link: "#" }
-        ];
-
-        let currentIdx = 0;
-        let isHovered = false;
-        const wrapper = document.getElementById('logos-carousel-wrapper');
-        const mainSec = document.getElementById('portfolio-trusted-section');
-
-        function buildLogos() {
-            wrapper.innerHTML = '';
-            LOGO_DATA.forEach((item, i) => {
-                const card = document.createElement('a');
-                card.href = item.link;
-                card.target = "_blank";
-                card.className = "partner-card-component absolute top-1/2 left-1/2 flex items-center justify-center w-24 h-24 bg-white rounded-2xl border border-gray-100 group shadow-sm";
-                card.setAttribute('data-idx', i);
-                
-                const content = document.createElement('div');
-                content.className = "w-full h-full p-5 flex items-center justify-center bg-white rounded-2xl overflow-hidden";
-                
-                const img = document.createElement('img');
-                img.src = item.img;
-                img.alt = "Partner";
-                img.className = "partner-logo-gray w-full h-full object-contain transition-transform duration-500 group-hover:scale-105";
-                
-               
-                img.onerror = function() {
-                    this.parentElement.innerHTML = '<svg class="w-6 h-6 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>';
-                };
-
-                content.appendChild(img);
-                card.appendChild(content);
-                wrapper.appendChild(card);
-            });
-
-            refreshPositions();
-            setTimeout(() => mainSec.style.opacity = '1', 200);
-        }
-
-        function refreshPositions() {
-            const allCards = wrapper.querySelectorAll('.partner-card-component');
-            const total = LOGO_DATA.length;
-
-            allCards.forEach((card, i) => {
-                let distance = (i - currentIdx + total + total / 2) % total - total / 2;
-                
-                if (Math.abs(distance) > 2.5) {
-                    card.style.display = 'none';
-                    return;
-                }
-                
-                card.style.display = 'flex';
-                const centered = distance === 0;
-                const offset = distance * 160;
-                const size = centered ? 1.2 : (0.85 - Math.abs(distance) * 0.1);
-                const alpha = centered ? 1 : (0.35 - Math.abs(distance) * 0.1);
-                const layer = Math.round(10 - Math.abs(distance));
-
-                card.style.transform = `translate(-50%, -50%) translateX(${offset}px) scale(${size})`;
-                card.style.opacity = Math.max(0, alpha);
-                card.style.zIndex = layer;
-
-                if (centered) {
-                    card.classList.add('active', 'shadow-xl', 'border-gray-200');
-                } else {
-                    card.classList.remove('active', 'shadow-xl', 'border-gray-200');
-                }
-            });
-        }
-
-        setInterval(() => {
-            if (!isHovered) {
-                currentIdx = (currentIdx + 1) % LOGO_DATA.length;
-                refreshPositions();
-            }
-        }, 2000);
-
-        wrapper.addEventListener('mouseenter', () => isHovered = true);
-        wrapper.addEventListener('mouseleave', () => isHovered = false);
-
-     
-        if (document.readyState === 'complete') buildLogos();
-        else window.addEventListener('load', buildLogos);
-    })();
-</script>
-   
-    <section id="discord" class="py-32 bg-[#0a0a0a] text-white relative overflow-hidden">
-        
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#5865F2] rounded-full mix-blend-screen filter blur-[120px] opacity-10 animate-pulse"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
-
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-20">
-                
-                
-                <div class="lg:w-1/2 reveal">
-                    <div class="inline-flex items-center gap-2 mb-6">
-                        <i data-lucide="server" class="text-[#5865F2]"></i>
-                        <span class="text-[#5865F2] font-bold tracking-wider uppercase text-sm">Serwer Discord</span>
+    <section id="grafiki" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Projekty Graficzne</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Minimalistyczne logo, spójne identyfikacje wizualne i materiały reklamowe, które przyciągają wzrok.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-3xl cursor-pointer shadow-lg">
+                    <img src="https://i.imgur.com/bQoF4eo.png" alt="Projekt 1" class="w-full h-80 object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <h3 class="text-white text-xl font-bold">Logo</h3>
+                            <p class="text-gray-300 text-sm mt-1">Dla Flux Studio</p>
+                        </div>
                     </div>
-                    
-                    <h2 class="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                        Współpracuję z <br>
-                        <span class="text-[#5865F2]">END CODE ORAZ VER CODE</span>
-                    </h2>
-                    
-                    <p class="text-gray-400 text-lg mb-10 leading-relaxed max-w-xl">
-                        To właśnie tam przyjmuję zlecenia, pomagam w konfiguracji botów i dzielę się wiedzą. Szukasz dedykowanego bota lub strony? Wejdź na serwer i otwórz ticket w strefie zamówień.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://xfazi-m.github.io/portfolio/Discord" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(88,101,242,0.4)] hover:shadow-[0_0_30px_rgba(88,101,242,0.6)]">
-                            <i data-lucide="ticket"></i>
-                            Dołącz na serwery
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl cursor-pointer shadow-lg">
+                    <img src="https://i.imgur.com/W8NhEYu.png" alt="Projekt 2" class="w-full h-80 object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <h3 class="text-white text-xl font-bold">Logo</h3>
+                            <p class="text-gray-300 text-sm mt-1">Dla siebie</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl cursor-pointer shadow-lg">
+                    <img src="https://i.imgur.com/jmopaqp.png" alt="Projekt 3" class="w-full h-80 object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <h3 class="text-white text-xl font-bold">Logo</h3>
+                            <p class="text-gray-300 text-sm mt-1">Dla siebie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="strony" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Strony Internetowe</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                    Nowoczesny design zamknięty w kodzie. Każdy projekt to połączenie estetyki z wydajnością.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="group bg-white rounded-[2rem] p-3 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+                    <div class="bg-slate-100 rounded-t-3xl border-b border-gray-200 p-3 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div class="ml-2 text-[10px] text-gray-400 font-mono bg-white px-2 py-0.5 rounded-md w-full truncate">milimetr.pl</div>
+                    </div>
+                    <div class="h-56 overflow-hidden relative bg-gray-50">
+                        <img src="https://i.imgur.com/TnTu955.png" alt="Website" class="w-full h-auto object-cover object-top transition-transform duration-[2s] ease-in-out group-hover:translate-y-[-20%]">
+                        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-primary transition">Portfolio</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Profesjonalna strona internetowa dla grafika minecraft.</p>
+                        <a href="https://xfazi-m.github.io/dfgfdxtghf/" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-primary transition">
+                            Zobacz demo <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
-
-            
-                <div class="lg:w-1/2 w-full reveal delay-200 flex justify-center lg:justify-end">
-                
-                    <div class="relative w-full max-w-md group perspective-1000">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-[#5865F2] to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
-                        
-                        <div class="relative bg-[#1a1b1e] border border-[#2d2f36] rounded-2xl p-6 shadow-2xl discord-glow transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-[1.02]">
-                            
-                            <div class="flex items-center justify-between mb-8">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#5865F2] to-[#404EED] flex items-center justify-center shadow-lg">
-                                        <i data-lucide="bot" class="w-8 h-8 text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-xl text-white">System Bot v2.0</h3>
-                                        <span class="text-xs text-gray-400 bg-gray-800 px-2 py-0.5 rounded uppercase tracking-wide">Main Core</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                    <span class="text-green-500 text-xs font-mono font-bold">ONLINE</span>
-                                </div>
+                <div class="group bg-white rounded-[2rem] p-3 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+                    <div class="bg-slate-100 rounded-t-3xl border-b border-gray-200 p-3 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div class="ml-2 text-[10px] text-gray-400 font-mono bg-white px-2 py-0.5 rounded-md w-full truncate">mromanowski.eu</div>
+                    </div>
+                    <div class="h-56 overflow-hidden relative bg-gray-50">
+                        <img src="https://i.imgur.com/6gcxliw.png" alt="Website" class="w-full h-auto object-cover object-top transition-transform duration-[2s] ease-in-out group-hover:translate-y-[-20%]">
+                        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-primary transition">Portfolio</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Profesjonalna strona internetowa dla web i bot dewelopera.</p>
+                        <a href="https://mromanowski.eu" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-primary transition">
+                            Zobacz demo <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-[2rem] p-3 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+                    <div class="bg-slate-100 rounded-t-3xl border-b border-gray-200 p-3 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div class="ml-2 text-[10px] text-gray-400 font-mono bg-white px-2 py-0.5 rounded-md w-full truncate">xfedziak.pl</div>
+                    </div>
+                    <div class="h-56 overflow-hidden relative bg-gray-50">
+                        <img src="https://i.imgur.com/m9Plhnm.png" alt="Website" class="w-full h-auto object-cover object-top transition-transform duration-[2s] ease-in-out group-hover:translate-y-[-20%]">
+                        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-primary transition">Portfolio</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Profesjonalna strona internetowa dla grafika minecraft.</p>
+                        <a href="https://xfazi-m.github.io/xfendziak/" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-primary transition">
+                            Zobacz demo <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="opinie" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-[20%] left-[10%] w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center relative z-10">
+            <span class="text-primary font-bold tracking-wider uppercase text-xs mb-3 block">Rekomendacje</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Co mówią klienci?</h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                Zaufanie to podstawa. Oto kilka słów od osób, z którymi miałem przyjemność współpracować przy ostatnich projektach.
+            </p>
+        </div>
+        <div class="relative w-full mask-gradient">
+            <div class="flex w-max animate-marquee hover:pause py-4">
+                <div class="flex space-x-8 px-4">
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             </div>
-
-                           
-                            <div class="grid grid-cols-2 gap-3 mb-6">
-                                <div class="bg-[#232428] p-4 rounded-xl border border-gray-800 hover:border-[#5865F2] transition-colors">
-                                    <div class="text-gray-500 text-xs uppercase mb-1">Serwery</div>
-                                    <div class="text-white font-mono text-xl">15+</div>
-                                </div>
-                                <div class="bg-[#232428] p-4 rounded-xl border border-gray-800 hover:border-[#5865F2] transition-colors">
-                                    <div class="text-gray-500 text-xs uppercase mb-1">Użytkownicy</div>
-                                    <div class="text-white font-mono text-xl">12.5k</div>
-                                </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "Genialne logo! Projektant świetnie zrozumiał naszą wizję i przełożył ją na nowoczesny znak graficzny. Jesteśmy zachwyceni efektem końcowym!"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/bQoF4eo.png" alt="Flux Studio" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">Flux Studio</h4>
                             </div>
-
-                          
-                            <div class="bg-[#0f1012] rounded-lg p-4 font-mono text-xs text-gray-400 border border-gray-800 relative overflow-hidden">
-                                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#5865F2]/5 to-transparent animate-pulse pointer-events-none"></div>
-                                <p><span class="text-purple-400">const</span> <span class="text-blue-400">order</span> = <span class="text-yellow-400">new</span> Ticket();</p>
-                                <p class="pl-4"><span class="text-blue-400">order</span>.<span class="text-yellow-300">create</span>({</p>
-                                <p class="pl-8">user: <span class="text-green-400">'Client'</span>,</p>
-                                <p class="pl-8">service: <span class="text-green-400">'FullStack'</span>,</p>
-                                <p class="pl-8">status: <span class="text-red-400 font-bold">'PRIORITY_HIGH'</span></p>
-                                <p class="pl-4">});</p>
+                        </div>
+                    </div>
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             </div>
-
-                            <div class="mt-6 text-center text-xs text-gray-600 uppercase tracking-widest">
-                                Developed & Hosted by Me
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "Świetny kontakt i pełne zrozumienie mojej wizji. Moje portfolio w końcu wygląda profesjonalnie. Polecam każdemu artyście, który szuka solidnego wykonawcy!"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/DWSHckC.png" alt="xfendziak" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">xfendziak</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "Super kontakt i świetny efekt końcowy. Portfolio wygląda profesjonalnie i nowocześnie. Dzięki!"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/DWSHckC.png" alt="Milimetr" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">Milimetr</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "legit. makieta strony wyszła ładnie oraz starannie dopieszczona. polecam"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/DWSHckC.png" alt="zopel" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">Zopel</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-8 px-4">
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "Genialne logo! Projektant świetnie zrozumiał naszą wizję i przełożył ją na nowoczesny znak graficzny. Jesteśmy zachwyceni efektem końcowym!"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/bQoF4eo.png" alt="Flux Studio" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">Flux Studio</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "Świetny kontakt i pełne zrozumienie mojej wizji. Moje portfolio w końcu wygląda profesjonalnie. Polecam każdemu artyście, który szuka solidnego wykonawcy!"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/DWSHckC.png" alt="xfendziak" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">xfendziak</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] md:w-[450px] bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between mx-2 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="absolute -top-4 -right-4 text-slate-50 opacity-50 group-hover:text-primary/5 transition-colors duration-500">
+                            <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex gap-1 text-yellow-400 mb-6">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed mb-8">
+                                "Super kontakt i świetny efekt końcowy. Portfolio wygląda profesjonalnie i nowocześnie. Dzięki!"
+                            </p>
+                        </div>
+                        <div class="flex items-center relative z-10 pt-6 border-t border-slate-50">
+                            <img src="https://i.imgur.com/DWSHckC.png" alt="Milimetr" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-50">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-900 text-base">Milimetr</h4>
                             </div>
                         </div>
                     </div>
@@ -655,235 +517,256 @@
             </div>
         </div>
     </section>
-
-  
-    <section id="portfolio" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="mb-16 reveal">
-                <span class="text-gray-500 font-bold tracking-widest uppercase text-xs">Portfolio</span>
-                <h2 class="text-4xl font-bold mt-2 mb-4">Wybrane Realizacje</h2>
-            </div>
-
-            <div class="grid grid-cols-1 gap-16">
-           
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                   
-                    <div class="group rounded-3xl overflow-hidden relative shadow-xl reveal delay-200 h-[400px]">
-                        <img src="images/vanishcraft.github.io_vanishcraft_ (1).png" alt="Bot Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        onerror="this.src='https://placehold.co/600x600/111/FFF?text=Bot+Dashboard';">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
-                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <span class="text-[#5865F2] font-bold text-xs uppercase tracking-wider mb-2 block">Sklep Serwerowy</span>
-                                <h3 class="text-2xl font-bold text-white mb-2">Sklep z bramką płatniczą</h3>
-                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                    Sklep z bramką płatniczą Stripe i botem DC z powiadomieniami
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                   
-                    <div class="group rounded-3xl overflow-hidden relative shadow-xl reveal delay-300 h-[400px]">
-                        <img src="images/xfazi-m.github.io_portfolio-driftcode_ (1).png" alt="Grafika" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        onerror="this.src='https://placehold.co/600x600/111/FFF?text=Branding+Pack';">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
-                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <span class="text-white font-bold text-xs uppercase tracking-wider mb-2 block">Portfolio</span>
-                                <h3 class="text-2xl font-bold text-white mb-2">Portfolio</h3>
-                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                    Rozbudowane portfolio
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<section id="contact-component" class="w-full max-w-6xl mx-auto my-10 bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden" style="font-family: 'Outfit', sans-serif;">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        #contact-component .input-style {
-            transition: all 0.2s ease;
-        }
-        #contact-component .input-style:focus {
-            background-color: white;
-            border-color: #6366f1;
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-        }
-        #contact-component textarea::-webkit-scrollbar { width: 4px; }
-        #contact-component textarea::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
-        
-        @keyframes fade-up-simple {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-component {
-            animation: fade-up-simple 0.6s ease-out forwards;
-        }
-    </style>
-
-    <div class="flex flex-col lg:flex-row animate-component">
-        
-       
-        <div class="lg:w-[35%] bg-slate-900 p-8 md:p-10 flex flex-col justify-between text-white relative">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-transparent pointer-events-none"></div>
-
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-3 tracking-tight">Kontakt</h2>
-                <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                    Masz projekt? Napisz do mnie tutaj lub złap mnie bezpośrednio na Discordzie.
+    <section id="kontakt" class="py-24 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Skontaktuj się</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                    Masz pomysł na projekt? Chcesz nawiązać współpracę? Skopiuj moje dane kontaktowe poniżej.
                 </p>
-
-              
-                <div class="bg-white/5 border border-white/10 p-5 rounded-3xl backdrop-blur-sm group transition-all hover:bg-white/10">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#5865F2] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-[#5865F2]/20">
-                            <svg width="24" height="18" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24.0156 1.83594C22.1875 0.984375 20.25 0.375 18.2344 0C17.9844 0.453125 17.7031 1.0625 17.5 1.54688C15.3281 1.21875 13.1719 1.21875 11.0156 1.54688C10.8125 1.0625 10.5312 0.453125 10.2656 0C8.25 0.375 6.3125 0.984375 4.48438 1.83594C0.8125 7.375 -0.1875 12.7812 0.3125 18.0625C2.71875 19.8594 5.04688 20.9375 7.32812 21C7.89062 20.2188 8.39062 19.3906 8.8125 18.5156C7.98438 18.2031 7.20312 17.8125 6.45312 17.3594C6.65625 17.2031 6.84375 17.0312 7.03125 16.8594C11.6406 19.0156 16.875 19.0156 21.4375 16.8594C21.625 17.0312 21.8281 17.2031 22.0312 17.3594C21.2812 17.8125 20.5 18.2031 19.6719 18.5156C20.0938 19.3906 20.5938 20.2188 21.1562 21C23.4531 20.9375 25.7656 19.8594 28.1719 18.0625C28.7812 11.9062 27.1562 6.54688 24.0156 1.83594ZM9.375 14.6094C8.01562 14.6094 6.89062 13.3438 6.89062 11.7812C6.89062 10.2188 7.98438 8.96875 9.375 8.96875C10.7812 8.96875 11.8906 10.2344 11.875 11.7812C11.875 13.3438 10.7812 14.6094 9.375 14.6094ZM19.1406 14.6094C17.7812 14.6094 16.6562 13.3438 16.6562 11.7812C16.6562 10.2188 17.7656 8.96875 19.1406 8.96875C20.5312 8.96875 21.6406 10.2344 21.625 11.7812C21.625 13.3438 20.5312 14.6094 19.1406 14.6094Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <span id="discord-nick" class="block text-lg font-bold text-white">x_fazi.m</span>
-                        </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-[2rem] p-8 shadow-xl border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Email</h3>
+                    <p class="text-slate-500 mb-8">Skopiuj adres, aby wysłać wiadomość.</p>
                     
-                    <button type="button" onclick="copyDiscordNick()" id="copy-btn-comp" class="w-full py-2.5 rounded-xl bg-white text-slate-900 text-xs font-bold transition-all flex items-center justify-center gap-2 active:scale-95 hover:bg-indigo-50">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                        <span id="copy-text-comp">Kopiuj</span>
-                    </button>
+                    <div class="w-full bg-slate-50 p-2 rounded-xl border border-slate-200 flex items-center justify-between pl-4 group-hover:border-primary/30 transition">
+                        <span class="font-mono text-slate-700 font-medium select-all truncate mr-2">kontakt@xfazi.pl</span>
+                        <button onclick="copyText('kontakt@xfazi.pl', this)" class="bg-white px-4 py-2 rounded-lg text-sm font-bold text-slate-700 shadow-sm border border-gray-100 hover:text-primary hover:border-primary transition active:scale-95 flex-shrink-0">
+                            Kopiuj
+                        </button>
+                    </div>
                 </div>
-            </div>
-
-           
-            <div id="toast-comp" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[10px] font-bold px-4 py-1 rounded-full opacity-0 transition-all pointer-events-none">
-                SKOPIOWANO!
+                <div class="bg-white rounded-[2rem] p-8 shadow-xl border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-16 h-16 bg-[#5865F2]/10 text-[#5865F2] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 13.46 13.46 0 0 0-.59 1.227 18.355 18.355 0 0 0-7.534 0 13.449 13.449 0 0 0-.593-1.227.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.674 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Discord</h3>
+                    <p class="text-slate-500 mb-8">Dodaj mnie do znajomych, aby porozmawiać.</p>
+                    <div class="w-full bg-slate-50 p-2 rounded-xl border border-slate-200 flex items-center justify-between pl-4 group-hover:border-[#5865F2]/30 transition">
+                        <span class="font-mono text-slate-700 font-medium select-all truncate mr-2">x_fazi.m</span>
+                        <button onclick="copyText('x_fazi.m', this)" class="bg-white px-4 py-2 rounded-lg text-sm font-bold text-slate-700 shadow-sm border border-gray-100 hover:text-[#5865F2] hover:border-[#5865F2] transition active:scale-95 flex-shrink-0">
+                            Kopiuj
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-
-        
-        <div class="lg:w-[65%] p-8 md:p-10 bg-white">
-            <form action="https://kwes.io/api/foreign/forms/kndpOyviDl5gXHIRsiZu" method="POST" class="kwes-form grid grid-cols-1 md:grid-cols-2 gap-5">
-                
-                <div class="md:col-span-1 space-y-1.5">
-                    <label class="text-xs font-bold text-slate-500 uppercase tracking-wide ml-1">Twoje Imię</label>
-                    <input type="text" name="name" placeholder="Imię" required
-                        class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl px-5 py-3.5 outline-none input-style placeholder-slate-300">
+    </section>
+    <footer id="footer" class="bg-white border-t border-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <div class="max-w-sm">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-slate-900 mb-4 block">
+                        X_FAZI<span class="text-primary">.</span>
+                    </a>
+                    <p class="text-slate-500 mb-6">
+                        Tworzę cyfrowe rozwiązania dla nowoczesnych marek. Skontaktuj się ze mną, aby omówić Twój kolejny projekt.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@xfazi-pl" class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition group">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                    </div>
                 </div>
-
-                <div class="md:col-span-1 space-y-1.5">
-                    <label class="text-xs font-bold text-slate-500 uppercase tracking-wide ml-1">Email</label>
-                    <input type="email" name="email" placeholder="Email" required
-                        class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl px-5 py-3.5 outline-none input-style placeholder-slate-300">
+                <div class="md:text-right">
+                    <h4 class="font-bold text-slate-900 mb-4">Menu</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#o-mnie" class="hover:text-primary transition">O mnie</a></li>
+                        <li><a href="#opinie" class="hover:text-primary transition">Loga</a></li>
+                        <li><a href="#grafiki" class="hover:text-primary transition">Grafiki</a></li>
+                        <li><a href="#strony" class="hover:text-primary transition">Strony</a></li>
+                        <li><a href="#opinie" class="hover:text-primary transition">Opinie</a></li>
+                    </ul>
                 </div>
-
-                <div class="md:col-span-2 space-y-1.5">
-                    <label class="text-xs font-bold text-slate-500 uppercase tracking-wide ml-1">Wiadomość</label>
-                    <textarea name="message" rows="3" placeholder="W czym mogę pomóc?" required
-                        class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl px-5 py-3.5 outline-none input-style placeholder-slate-300"></textarea>
-                </div>
-
-                <div class="md:col-span-2 pt-2">
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-100 transition-all transform hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2">
-                        <span>Wyślij wiadomość</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-   
-    <script src="https://kwesforms.com/v2/kwes-forms.js" defer></script>
-
-    <script>
-        function copyDiscordNick() {
-            const nick = document.getElementById('discord-nick').innerText;
-            const btnText = document.getElementById('copy-text-comp');
-            const toast = document.getElementById('toast-comp');
-
-            const el = document.createElement('textarea');
-            el.value = nick;
-            el.setAttribute('readonly', '');
-            el.style.position = 'absolute';
-            el.style.left = '-9999px';
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-
-            toast.classList.remove('opacity-0');
-            toast.classList.add('opacity-100', '-translate-y-1');
-            
-            const originalText = btnText.innerText;
-            btnText.innerText = "Skopiowano!";
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0');
-                toast.classList.remove('opacity-100', '-translate-y-1');
-                btnText.innerText = originalText;
-            }, 2000);
-        }
-    </script>
-</section>
-
-    <footer class="bg-white border-t border-gray-200 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-xl font-bold tracking-tighter">
-                X_FAZI<span class="text-gray-400"> Portfolio</span>
             </div>
-            
-            <div class="text-sm text-gray-500 font-medium">
-                &copy; 2026 X_FAZI. <span class="text-gray-300 mx-2"></span>
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2026 X_FAZI . Wszelkie prawa zastrzeżone.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                </div>
             </div>
         </div>
     </footer>
+<script>
+(function(){
+  if (window.__mpVideoGridInit) return;
+  window.__mpVideoGridInit = true;
 
+  function toYouTubeEmbed(urlOrId){
+    const s = String(urlOrId || "").trim();
+    if (!s) return "";
 
+    if (s.includes("youtube.com/embed/")) return s;
+
+    let id = s;
+    try {
+      if (s.startsWith("http")){
+        const u = new URL(s);
+        if (u.hostname.includes("youtu.be")) {
+          id = u.pathname.replace("/", "");
+        } else {
+          id = u.searchParams.get("v") || "";
+          if (!id && u.pathname.includes("/shorts/")) {
+            id = u.pathname.split("/shorts/")[1]?.split("/")[0] || "";
+          }
+        }
+      }
+    } catch(e){}
+
+    if (id.includes("watch?v=")) id = id.split("watch?v=")[1].split("&")[0];
+    id = id.split("&")[0].split("?")[0];
+
+    return "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1";
+  }
+
+  const modal = document.getElementById("mp-modal");
+  const player = document.getElementById("mp-player");
+  const modalTitle = document.getElementById("mp-modalTitle");
+  const closeBtn = document.getElementById("mp-close");
+
+  if (!modal || !player || !modalTitle || !closeBtn) return;
+
+  function openModal(title, video){
+    const src = toYouTubeEmbed(video);
+    if (!src) return;
+
+    modalTitle.textContent = title || "Wideo";
+    player.innerHTML =
+      '<iframe src="' + src + '" title="' + (title || "Wideo").replace(/"/g, "&quot;") + '"' +
+      ' allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+
+    modal.setAttribute("aria-hidden", "false");
+    document.documentElement.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+
+  function closeModal(){
+    modal.setAttribute("aria-hidden", "true");
+    player.innerHTML = "";
+    document.documentElement.style.overflow = "";
+  }
+
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest && e.target.closest(".mp-cardBtn");
+    if (!btn) return;
+    openModal(btn.dataset.title, btn.dataset.video);
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function(e){
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false"){
+      closeModal();
+    }
+  });
+})();
+</script>
     <script>
-        
-        lucide.createIcons();
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
 
-       
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                // Mała animacja otwarcia
-                menu.style.opacity = "0";
-                menu.style.transform = "translateY(-10px)";
-                setTimeout(() => {
-                    menu.style.transition = "all 0.3s ease";
-                    menu.style.opacity = "1";
-                    menu.style.transform = "translateY(0)";
-                }, 10);
-            } else {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
                 menu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+
+        const videoModal = document.getElementById('video-modal');
+        const videoFrame = document.getElementById('video-frame');
+        const videoModalContent = document.getElementById('video-modal-content');
+
+        function openVideo(videoId) {
+            videoFrame.src = `https://www.youtube.com/watch?v=mcd8c6uDkpg&t=24s${videoId}?autoplay=1&rel=0`;
+            videoModal.classList.remove('hidden');
+            void videoModal.offsetWidth; 
+            videoModal.classList.remove('opacity-0');
+            videoModalContent.classList.remove('scale-95');
+            videoModalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            videoModal.classList.add('opacity-0');
+            videoModalContent.classList.remove('scale-100');
+            videoModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                videoModal.classList.add('hidden');
+                videoFrame.src = '';
+            }, 300); 
+            document.body.style.overflow = 'auto';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                closeVideo();
+            }
+        });
+        function copyText(text, button) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showCopySuccess(button);
+                }).catch(err => {
+                    console.error('Clipboard API failed', err);
+                    fallbackCopyText(text, button);
+                });
+            } else {
+                fallbackCopyText(text, button);
             }
         }
 
-        
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        function fallbackCopyText(text, button) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess(button);
+                } else {
+                    console.error('Fallback copy failed.');
                 }
+            } catch (err) {
+                console.error('Fallback copy error', err);
             }
+            
+            document.body.removeChild(textArea);
         }
 
-        window.addEventListener("scroll", reveal);
-        reveal(); 
+        function showCopySuccess(button) {
+            const originalText = button.innerText;
+            button.innerText = 'Skopiowano!';
+            button.classList.add('bg-green-50', 'text-green-600', 'border-green-200');
+            
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.classList.remove('bg-green-50', 'text-green-600', 'border-green-200');
+            }, 2000);
+        }
     </script>
-
 </body>
 </html>
