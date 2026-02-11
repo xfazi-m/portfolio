@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xfazi.pl</title>
+    <meta name="description" content="Profesjonalne: Grafiki oraz Strony WWW.">
+    <link rel="icon" href="https://i.postimg.cc/PJgjXDH7/dzxfds.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>   
+    tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#111111', 
+                        secondary: '#ffffff',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 20px;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-primary selection:text-white">
+    <div id="video-modal" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-md transition-all duration-300 opacity-0">
+        <div id="video-modal-content" class="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 transform scale-95 transition-all duration-300">
+            <button onclick="closeVideo()" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-primary text-white p-2 rounded-full backdrop-blur-sm transition-colors group">
+                <svg class="w-6 h-6 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <iframe id="video-frame" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="absolute inset-0 -z-10" onclick="closeVideo()"></div>
+    </div>
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="https://xfazi-m.github.io/dfgfdqwe32we43rfc/" class="text-2xl font-bold tracking-tight text-slate-900">
+                        X_FAZI<span class="text-primary">.</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">O mnie</a>
+                    <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Loga</a>
+                    <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Grafiki</a>
+                    <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Strony</a>
+                    <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Opinie</a>
+                    <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary transition-all shadow-lg hover:shadow-primary/30">
+                        Współpraca
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2 rounded-xl hover:bg-secondary transition">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl rounded-b-3xl">
+                <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">O mnie</a>
+                <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Loga</a>
+                <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Grafiki</a>
+                <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Strony</a>
+                <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-secondary hover:text-primary">Opinie</a>
+                <a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="block px-4 py-3 mt-4 text-center rounded-xl text-base font-medium bg-primary text-white hover:bg-primaryDark">Współpraca</a>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32 pb-24 min-h-screen bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
+                <div class="group flex items-center justify-center p-4 opacity-0 animate-fade-in-up delay-100 cursor-pointer h-32">
+                    <img src="https://i.imgur.com/zPb4oOZ.png" alt="Logo" class="max-h-16 w-auto grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100 group-hover:scale-110 transform">
+                </div>
+                <div class="group flex items-center justify-center p-4 opacity-0 animate-fade-in-up delay-200 cursor-pointer h-32">
+                    <img src="https://i.imgur.com/8MaFXvZ.png" alt="Logo" class="max-h-16 w-auto grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100 group-hover:scale-110 transform">
+                </div>
+                <div class="group flex items-center justify-center p-4 opacity-0 animate-fade-in-up delay-300 cursor-pointer h-32">
+                    <img src="https://i.imgur.com/hkuQwHf.png" alt="Logo" class="max-h-16 w-auto grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100 group-hover:scale-110 transform">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer" class="bg-white border-t border-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <div class="max-w-sm">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-slate-900 mb-4 block">
+                        X_FAZI<span class="text-primary">.</span>
+                    </a>
+                    <p class="text-slate-500 mb-6">
+                        Tworzę cyfrowe rozwiązania dla nowoczesnych marek. Skontaktuj się ze mną, aby omówić Twój kolejny projekt.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@xfazi-pl" class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition group">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:text-right">
+                    <h4 class="font-bold text-slate-900 mb-4">Menu</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="hover:text-primary transition">O mnie</a></li>
+                        <li><a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="hover:text-primary transition">Loga</a></li>
+                        <li><a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="hover:text-primary transition">Grafiki</a></li>
+                        <li><a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="hover:text-primary transition">Strony</a></li>
+                        <li><a href="xfazi-m.github.io/dfgfdqwe32we43rfc/" class="hover:text-primary transition">Opinie</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2026 X_FAZI . Wszelkie prawa zastrzeżone.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
 
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
